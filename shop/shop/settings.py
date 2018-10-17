@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [
@@ -76,9 +77,10 @@ WSGI_APPLICATION = 'shop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'shopDB',
-        'PASSWORD':  'a142332144113',
+        'NAME': 'shopdb',
+        'PASSWORD': '1234',
         'USER': 'postgres',
+        'HOST': 'localhost',
         'port': 5432
      }
 }

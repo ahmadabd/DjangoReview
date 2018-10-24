@@ -5,4 +5,12 @@ from django.contrib import admin
 from .models import Post
 
 # Register your models here.
-admin.site.register(Post)
+
+class postAdmin(admin.ModelAdmin):
+    list_display = ('title', 'slug', 'status')
+    list_filter = ('published', 'status')
+    search_fields = ('title', 'body')
+    ordering = ['status', 'published']
+    prepopulated_fields = {'slug' : ('title',)}
+
+admin.site.register(Post, postAdmin)

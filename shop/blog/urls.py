@@ -1,6 +1,11 @@
-from django.conf.urls import url
+from django.urls import path
 from . import views
 
 urlpatterns = [
-    url('', views.index, name = 'index')
+
+    # ex: hostname/blog
+    path('', views.index, name = 'index'),
+
+    # ex: hostname/blog/4
+    path('<int:post_id>', views.detail, name = 'detail')
 ]

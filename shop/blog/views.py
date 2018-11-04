@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
+from django.template import loader
 from django.shortcuts import render, get_object_or_404
-# Create your views here.
 from django.http import HttpResponse, Http404
 from .models import Post
 
@@ -18,5 +17,6 @@ def detail(request, post_id):
     #    raise Http404("Post does not exists.")
 
     post = get_object_or_404(Post, pk = post_id)
+    template = loader.get_template("detail.html")
 
-    return HttpResponse("You are looking at post {}".format(post))
+    return HttpResponse(template.render())

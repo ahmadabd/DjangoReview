@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, get_list_or_404
 from django.http import Http404
 from .models import Post
 
@@ -18,6 +18,6 @@ def detail(request, post_id):
 
 def archiveYear(request, year):
 
-    year_archive_post = Post.objects.filter(published__year = year)
+    year_archive_post = get_list_or_404(Post, published__year = year)    # instead of Post.objects.filter(published__year = year)
     context = { 'year_archive_post' : year_archive_post }
     return render(request, 'archive.html', context)

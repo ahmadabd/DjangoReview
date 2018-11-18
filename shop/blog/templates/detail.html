@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>details post</title>
-  </head>
-  <body>
+{% extends "parent/main.html" %}
+
+{% block title %}
+details
+{% endblock %}
+
+{% block body %}
     <h1>this is out post:</h1>
     <h2>post slug : {{ post.slug }}</h2>
     <h3>post body : {{ post.body }}</h3>
-  </body>
-</html>
+{% endblock %}

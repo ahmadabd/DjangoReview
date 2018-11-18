@@ -1,7 +1,15 @@
-{% if year_archive_post %}
-  {% for post in year_archive_post %}
-    {{ post.title }}
-  {% endfor %}
-{% else %}
-  <p>no post are available</p>
-{% endif %}
+{% extends "parent/main.html" %}
+
+{% block title %}
+  archive
+{% endblock %}
+
+{% block body %}
+  {% if year_archive_post %}
+    {% for post in year_archive_post %}
+      {{ post.title }}
+    {% endfor %}
+  {% else %}
+    <p>no post are available</p>
+  {% endif %}
+{% endblock %}

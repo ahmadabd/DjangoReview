@@ -5,6 +5,9 @@
 {% endblock %}
 
 {% block body %}
+
+  {% include "partials/carosel.html" %}
+
   <h1>All posts</h1>
   {% if latest_post_list  %}
     <ul>

@@ -1,19 +1,14 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>index page</title>
-  </head>
-  <body>
-    <h1>All posts</h1>
-    {% if latest_post_list  %}
-      <ul>
-        {% for post in latest_post_list %}
-          <li><a href="{% url 'blog:detail' post.id %}">{{ post.slug }}</a></li>
-        {% endfor %}
-      </ul>
-    {% else %}
-      <p style="color:tomato;">No post available</p>
-    {% endif %}
-  </body>
-</html>
+{% extends "parent/main.html" %}
+
+{% block body %}
+  <h1>All posts</h1>
+  {% if latest_post_list  %}
+    <ul>
+      {% for post in latest_post_list %}
+        <li><a href="{% url 'blog:detail' post.id %}">{{ post.slug }}</a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p style="color:tomato;">No post available</p>
+  {% endif %}
+{% endblock %}

@@ -1,4 +1,4 @@
-#!/home/ahmad/Desktop/DjangoReviewCodes/DjangoReview/.venv/bin/python
+#!/home/ahmad/Desktop/DjangoReview/.venv/bin/python
 
 import sys
 import getopt
